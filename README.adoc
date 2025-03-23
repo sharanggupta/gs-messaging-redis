@@ -58,7 +58,7 @@ NOTE: If your IDE has the Spring Initializr integration, you can complete this p
 
 In any messaging-based application, there are message publishers and messaging receivers.
 To create the message receiver, implement a receiver with a method to respond to messages,
-as the following example (from `src/main/java/com/example/messagingredis/Receiver.java`)
+as the following example (from `src/main/java/dev/sharanggupta/gs_messaging_redis/Receiver.java`)
 shows:
 
 ====
@@ -93,7 +93,7 @@ This example uses Spring Boot's default `RedisConnectionFactory`, an instance of
 `JedisConnectionFactory` that is based on the https://github.com/xetorthio/jedis[Jedis]
 Redis library. The connection factory is injected into both the message listener container
 and the Redis template, as the following example (from
-`src/main/java/com/example/messagingredis/MessagingRedisApplication.java`) shows:
+`src/main/java/dev/sharanggupta/gs_messaging_redis/MessagingRedisApplication.java`) shows:
 
 ====
 [source,java]
@@ -133,8 +133,8 @@ You should see the output:
 ====
 [source,bash]
 ----
-yyyy-mm-ddT07:08:48.646-04:00  INFO 18338 --- [main] c.e.m.MessagingRedisApplication: Sending message...
-yyyy-mm-ddT07:08:48.663-04:00  INFO 18338 --- [container-1] com.example.messagingredis.Receiver      : Received <Hello from Redis!>
+yyyy-mm-ddT07:08:48.646-04:00  INFO 18338 --- [main] d.s.g.GsMessagingRedisApplication: Sending message...
+yyyy-mm-ddT07:08:48.663-04:00  INFO 18338 --- [container-1] dev.sharanggupta.gs_messaging_redis.Receiver      : Received <Hello from Redis!>
 ----
 ====
 
